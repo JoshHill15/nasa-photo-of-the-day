@@ -9,7 +9,6 @@ function CardList2 () {
         `)
         .then(response => {
             setData(response.data)
-            console.log(data)
         })
         .catch(err => console.log("Error found: ", err))
 
@@ -20,7 +19,8 @@ function CardList2 () {
     console.log(data)
     return (
         <div>
-            <Card2 date = {data.date}/>
+            <h1>CARD2</h1>
+            <Card2 explanation = {data.explanation} date = {data.date} imgUrl = {data.hdurl}/>
         </div>
     )
 }

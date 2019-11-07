@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
 import axios from "axios"
-import Card from "./Card"
+import Card1 from "./Card"
 
 function CardList () {
     const [data, setData] = useState([])
@@ -9,21 +9,19 @@ function CardList () {
         axios.get(`https://api.nasa.gov/EPIC/api/natural?api_key=eZRex96J8dGYwqUdHdupOLAJZedArOZYwQwoFcNG
         `)
         .then(response => {
-            // console.log(response.data)
+            // console.log(response)
             setData(response.data)
         })
         .catch(err => console.log("Data not being transferred", err))
 
     }, [])
-
-
     
-    // console.log(data)
+    console.log(data)
     return (
         <div>
-            <h1>Card 1</h1>
+            <h1>CARD1</h1>
             {data.map((cv, index) => {
-                return <Card 
+                return <Card1 
                 key = {index} 
                 date = {cv.date} 
                 imgUrl = {cv.image}
@@ -39,3 +37,19 @@ function CardList () {
 export default CardList
 
 
+
+
+
+
+
+
+
+
+// useEffect(() => {
+//     axios.get(`https://swapi.co/api/people/1/`)
+//     .then(response => {
+//         console.log(response)
+//     })
+//     .catch(err => console.log("Data not being transferred", err))
+
+// }, [])
